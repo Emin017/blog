@@ -11,7 +11,7 @@ features:
   url: /intro/intro/ 
 - title: 教程搬运
   details: 搬运一些教程
-  url: /cakewalk/intro/ 
+  url: /tutorial/intro/
 - title: 学习记录
   details: 主要记录一些学习经验和心得
   url: /study/intro/
