@@ -6,7 +6,7 @@ module.exports = {
     name: "Emin", // 必需
     link: "https://github.com/Emin017", // 可选的
   },
-  base: "/blog/", // 这是部署到github相关的配置
+  base: "/", // 这是部署到github相关的配置
   markdown: {
     lineNumbers: true, // 代码块显示行号
     extractHeaders: ["h2", "h3", "h4", "h5", "h6"],
