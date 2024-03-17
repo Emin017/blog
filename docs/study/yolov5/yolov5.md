@@ -34,11 +34,11 @@ tags:
 
     系统Ubuntu
     
-    ![选择系统类型](https://s2.loli.net/2024/03/17/YiKNdQMHBsmbeh8.png)
+    ![选择系统类型](https://emin-blog.oss-cn-shanghai.aliyuncs.com/img/yolov5_0.png)
     
     较便宜GPU类型：g4dn
     
-    ![选择实例类型](https://s2.loli.net/2024/03/17/U6l4dbPEiaexs51.png)
+    ![选择实例类型](https://emin-blog.oss-cn-shanghai.aliyuncs.com/img/yolov5_1.png)
     
     - 查看配置和价格网站
         
@@ -47,12 +47,12 @@ tags:
     
     存储从8GB改为20GB或者更大
     
-    ![选择存储](https://s2.loli.net/2024/03/17/vAmreOBP4lEHnqj.png)
+    ![选择存储](https://emin-blog.oss-cn-shanghai.aliyuncs.com/img/yolov5_2.png)
 
     
     选择密钥(没有密匙的话可以新建一个)
     
-    ![选择密匙](https://s2.loli.net/2024/03/17/3pAWhrFGQLif8uj.png)
+    ![选择密匙](https://emin-blog.oss-cn-shanghai.aliyuncs.com/img/yolov5_3.png)
     
 
 复制ip地址
