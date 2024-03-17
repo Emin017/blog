@@ -33,6 +33,7 @@ jobs:
           deploy_branch=gh-pages
           yarn
           yarn docs:build
+          cp -r docs/study/yolov5/files docs/.vuepress/dist/pages/yolov5/files
           cd docs/.vuepress/dist
           git config --global init.defaultBranch $deploy_branch
           git init
