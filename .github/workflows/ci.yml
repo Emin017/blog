@@ -34,6 +34,7 @@ jobs:
           yarn
           yarn docs:build
           cd docs/.vuepress/dist
+          echo 'emin017.github.io' > CNAME
           git config --global init.defaultBranch $deploy_branch
           git init
           git config user.name ${user_name}
