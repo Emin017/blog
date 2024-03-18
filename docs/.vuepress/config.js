@@ -1,6 +1,6 @@
 module.exports = {
-  title: "Emin's blog",
-  description: "Welcome to Emin's blog",
+  title: "Emin's Blog",
+  description: "Welcome to Emin's Blog",
   theme: "vdoing",
   head: [["link", { rel: "icon", href: "/img/logo.ico" }]],
   author: {
