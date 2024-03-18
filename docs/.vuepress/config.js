@@ -15,10 +15,23 @@ module.exports = {
     nav: [
       // 导航栏配置
       { text: "首页", link: "/" },
+      { text: "个人介绍", link: "/intro/intro/" },
       { text: "教程搬运", link: "/tutorial/intro/" },
-      { text: "学习记录", link: "/study/intro/" },
+      { text: "学习笔记", link: "/notes/intro/",
+        items: [
+          { text: "数字IC和体系结构", link: "/notes/IC/intro/"},
+          { text: "人工智能", link: "/notes/AI/intro/"}
+        ]
+      },
       { text: "Emin's GitHub", link: "https://github.com/Emin017" },
     ],
     sidebar: "structuring", // 侧边栏配置
   },
+  extendFrontmatter: {
+    author: {
+      name: 'Emin',
+      link: 'https://github.com/Emin017',
+    },
+    titleTag: '',
+  }
 };
