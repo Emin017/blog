@@ -2,6 +2,9 @@ module.exports = {
   title: "Emin's blog",
   description: "Welcome to Emin's blog",
   theme: "vdoing",
+  head: [
+    ['link', { rel: 'icon', href: '/img/logo.ico' }],
+  ],
   author: {
     name: "Emin", // 必需
     link: "https://github.com/Emin017", // 可选的
