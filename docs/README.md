@@ -3,6 +3,7 @@ home: true
 heroText: Emin's Blog
 tagline: Welcome to Emin's Blog
 blog: true
+bannerBg: /img/gradients.png
 actionText: 查看个人博客 →
 actionLink: /notes/intro/
 features:
