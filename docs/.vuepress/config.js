@@ -2,9 +2,7 @@ module.exports = {
   title: "Emin's blog",
   description: "Welcome to Emin's blog",
   theme: "vdoing",
-  head: [
-    ['link', { rel: 'icon', href: '/img/logo.ico' }],
-  ],
+  head: [["link", { rel: "icon", href: "/img/logo.ico" }]],
   author: {
     name: "Emin", // 必需
     link: "https://github.com/Emin017", // 可选的
@@ -20,11 +18,22 @@ module.exports = {
       { text: "首页", link: "/" },
       { text: "个人介绍", link: "/intro/intro/" },
       { text: "教程搬运", link: "/tutorial/intro/" },
-      { text: "学习笔记", link: "/notes/intro/",
+      {
+        text: "学习笔记",
+        link: "/notes/intro/",
         items: [
-          { text: "数字IC和体系结构", link: "/notes/IC/intro/"},
-          { text: "人工智能", link: "/notes/AI/intro/"}
-        ]
+          { text: "数字IC和体系结构", link: "/notes/IC/intro/" },
+          { text: "人工智能", link: "/notes/AI/intro/" },
+        ],
+      },
+      {
+        text: "索引",
+        link: "/tutorial/intro/",
+        items: [
+          { text: "分类", link: "/categories/" },
+          { text: "标签", link: "/tags/" },
+          { text: "归档", link: "/archives/" },
+        ],
       },
       { text: "Emin's GitHub", link: "https://github.com/Emin017" },
     ],
@@ -32,9 +41,9 @@ module.exports = {
   },
   extendFrontmatter: {
     author: {
-      name: 'Emin',
-      link: 'https://github.com/Emin017',
+      name: "Emin",
+      link: "https://github.com/Emin017",
     },
-    titleTag: '',
-  }
+    titleTag: "",
+  },
 };
