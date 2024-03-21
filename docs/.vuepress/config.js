@@ -28,7 +28,7 @@ module.exports = {
       },
       {
         text: "索引",
-        link: "/tutorial/intro/",
+        link: "",
         items: [
           { text: "分类", link: "/categories/" },
           { text: "标签", link: "/tags/" },
