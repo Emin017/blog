@@ -10,4 +10,4 @@ tags:
 ---
 
 # Slides 目录
-- [Chisel 分享](/slides/chisel/index.html)
+- [Chisel 分享](https://eminblog.cc/slides/chisel)
