@@ -21,8 +21,8 @@ module.exports = {
         text: "学习笔记",
         link: "/notes/intro/",
         items: [
-          { text: "数字IC和体系结构", link: "/notes/IC/intro/" },
-          { text: "人工智能", link: "/notes/AI/intro/" },
+          { text: "数字IC", link: "/notes/IC/intro/" },
+          { text: "Deep Learning", link: "/notes/AI/intro/" },
         ],
       },
       {
