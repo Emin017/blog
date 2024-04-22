@@ -17,7 +17,6 @@ module.exports = {
       // 导航栏配置
       { text: "首页", link: "/" },
       { text: "个人介绍", link: "/intro/intro/" },
-      { text: "教程搬运", link: "/tutorial/intro/" },
       {
         text: "学习笔记",
         link: "/notes/intro/",
