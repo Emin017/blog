@@ -45,4 +45,5 @@ module.exports = {
     },
     titleTag: "",
   },
+  plugins: ['one-click-copy']
 };
