@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ysyxSoC Chisel 开发环境配置 | Emin&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/img/logo.ico">
+    <meta name="description" content="Welcome to Emin&#39;s Blog">
+    
+    <link rel="preload" href="/assets/css/0.styles.121f282a.css" as="style"><link rel="preload" href="/assets/js/app.1873182b.js" as="script"><link rel="preload" href="/assets/js/3.be01622c.js" as="script"><link rel="preload" href="/assets/js/2.4fd48b6f.js" as="script"><link rel="preload" href="/assets/js/44.711d4403.js" as="script"><link rel="prefetch" href="/assets/js/1.20dc3f49.js"><link rel="prefetch" href="/assets/js/10.bdc2b503.js"><link rel="prefetch" href="/assets/js/11.c0f61c9e.js"><link rel="prefetch" href="/assets/js/12.68716719.js"><link rel="prefetch" href="/assets/js/13.95d73489.js"><link rel="prefetch" href="/assets/js/14.00647e98.js"><link rel="prefetch" href="/assets/js/15.dbf980b1.js"><link rel="prefetch" href="/assets/js/16.241cc666.js"><link rel="prefetch" href="/assets/js/17.59a7545e.js"><link rel="prefetch" href="/assets/js/18.0aa1f41a.js"><link rel="prefetch" href="/assets/js/19.e5af0120.js"><link rel="prefetch" href="/assets/js/20.fca9ca50.js"><link rel="prefetch" href="/assets/js/21.0dac1494.js"><link rel="prefetch" href="/assets/js/22.24af22d0.js"><link rel="prefetch" href="/assets/js/23.728ad196.js"><link rel="prefetch" href="/assets/js/24.e878f33c.js"><link rel="prefetch" href="/assets/js/25.89db4503.js"><link rel="prefetch" href="/assets/js/26.96b4eba4.js"><link rel="prefetch" href="/assets/js/27.74758f4d.js"><link rel="prefetch" href="/assets/js/28.989860d8.js"><link rel="prefetch" href="/assets/js/29.289b0936.js"><link rel="prefetch" href="/assets/js/30.b3a382df.js"><link rel="prefetch" href="/assets/js/31.1a331b41.js"><link rel="prefetch" href="/assets/js/32.5b3890d5.js"><link rel="prefetch" href="/assets/js/33.a76cef1f.js"><link rel="prefetch" href="/assets/js/34.8e53ee7c.js"><link rel="prefetch" href="/assets/js/35.d72443eb.js"><link rel="prefetch" href="/assets/js/36.4db7bfb8.js"><link rel="prefetch" href="/assets/js/37.6259ad8f.js"><link rel="prefetch" href="/assets/js/38.ffac5466.js"><link rel="prefetch" href="/assets/js/39.0f53bf30.js"><link rel="prefetch" href="/assets/js/4.a57f9af6.js"><link rel="prefetch" href="/assets/js/40.4689cd91.js"><link rel="prefetch" href="/assets/js/41.935ef6d1.js"><link rel="prefetch" href="/assets/js/42.ee865771.js"><link rel="prefetch" href="/assets/js/43.557d8f87.js"><link rel="prefetch" href="/assets/js/45.3b82f05c.js"><link rel="prefetch" href="/assets/js/46.94a57260.js"><link rel="prefetch" href="/assets/js/47.a162bf59.js"><link rel="prefetch" href="/assets/js/48.1f7190b6.js"><link rel="prefetch" href="/assets/js/49.3f7de9ec.js"><link rel="prefetch" href="/assets/js/5.1d48745d.js"><link rel="prefetch" href="/assets/js/50.8f784f88.js"><link rel="prefetch" href="/assets/js/51.a3498040.js"><link rel="prefetch" href="/assets/js/52.d50ff522.js"><link rel="prefetch" href="/assets/js/6.237dd15b.js"><link rel="prefetch" href="/assets/js/9.7634c8c8.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.e3b34c5f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.121f282a.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Emin's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/intro/intro/" class="nav-link">个人介绍</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学习笔记" class="dropdown-title"><a href="/notes/intro/" class="link-title">学习笔记</a> <span class="title" style="display:none;">学习笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/IC/intro/" class="nav-link">数字IC</a></li><li class="dropdown-item"><!----> <a href="/notes/AI/intro/" class="nav-link">Deep Learning</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><!----> <span class="title" style="display:;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/Emin017" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Emin's GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><!----> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/intro/intro/" class="nav-link">个人介绍</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学习笔记" class="dropdown-title"><a href="/notes/intro/" class="link-title">学习笔记</a> <span class="title" style="display:none;">学习笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/IC/intro/" class="nav-link">数字IC</a></li><li class="dropdown-item"><!----> <a href="/notes/AI/intro/" class="nav-link">Deep Learning</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><!----> <span class="title" style="display:;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/Emin017" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Emin's GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>体系结构&amp;数字IC</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>Verilator</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>GEM5</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>Chisel</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>一生一芯</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/ysyx/ysyxSoC-Chisel/" aria-current="page" class="active sidebar-link">ysyxSoC Chisel 开发环境配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/pages/ysyx/ysyxSoC-Chisel/#代码导读" class="sidebar-link">代码导读</a></li><li class="sidebar-sub-header level2"><a href="/pages/ysyx/ysyxSoC-Chisel/#为-rockee-chip-添加-idea-支持" class="sidebar-link">为 rockee-chip 添加 IDEA 支持</a></li><li class="sidebar-sub-header level2"><a href="/pages/ysyx/ysyxSoC-Chisel/#替换-rocket-chip-中在-chisel6-中已弃用的-api" class="sidebar-link">替换 rocket-chip 中在 chisel6 中已弃用的 API</a></li><li class="sidebar-sub-header level2"><a href="/pages/ysyx/ysyxSoC-Chisel/#为-soc-相关代码提供高亮和跳转支持" class="sidebar-link">为 SoC 相关代码提供高亮和跳转支持</a></li><li class="sidebar-sub-header level2"><a href="/pages/ysyx/ysyxSoC-Chisel/#新版本-ysyxsoc-代码导入" class="sidebar-link">新版本 ysyxSoC 代码导入</a></li></ul></li></ul></section></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>深度学习</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/categories/?category=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="分类" data-v-06225672>学习笔记</a></li><li data-v-06225672><a href="/categories/?category=%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%26%E6%95%B0%E5%AD%97IC" title="分类" data-v-06225672>体系结构&amp;数字IC</a></li><li data-v-06225672><a href="/categories/?category=%E4%B8%80%E7%94%9F%E4%B8%80%E8%8A%AF" title="分类" data-v-06225672>一生一芯</a></li></ul> <div class="info" data-v-06225672><!----> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2024-04-12</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABKFJREFUSA3tVl1oFVcQnrMbrak3QUgkya1akpJYcrUtIqW1JvFBE9LiQ5v6JmJpolbMg32rVrhgoYK0QiMY6i9Y6EMaW5D+xFJaTYItIuK2Kr3+BJNwkxBj05sQY3b3nM6cs2dv9t7NT/vQJw/sndk5M/PNzJkzewGerP+pAmy+ON8lLzUJgA8ZYxYIYZmGYRnctDaWvJJAmTtfP1pvXsBCCPP8QFcCaRkZYACgDZFO4stNIcBCajEOlmmC9XpJ9bAGCaPaPmzPl32dvLSVu3BWCTQs0XQQ6g0DYgwLIoAZbBCdW/i+781o1VVlm/410mw4h06Y7bIPHNyWDyL4FHkX03Q8SrzNhZTZriieckWt7cL6MM85YcLpsi/7O9/iXFT6MswI0DmmpkSaJ0qLxFIm3+i1THHB3zmBH3PYx9CcykcLOeQVVa7QtdxTgQgEleX2AjHYfwA+2ddV77ruGoJUbhGDI09YSNXyMpUt5ylOzxgbUmtOp7NmbNt8v3arjTBfYELmLUV+M+nSawNNAUqpT3ClJWg5I3BLT+cGW/DXNGCa6tx1aakCGEigArTn4TDIPdrXXYKCZNrHLMCOEPvHBlLQ99s9eHB7EB6NTki73CVPQ2F5MSx/uRQixfmq7rK0wYD8w8E905bnPDfwoWs/rfv93NWN/ZfvwsLIU7A09gxECyISeGJkHAau98L97tuw7NXnoPyNF8FcYGLGKsOs0mN3OEyec9esGW/ZEl945dTP34wlR2FZVQWU1q0Cw8Tr7p+hgLLNL0FPxx/Q35mA8aEUrH6nCgwEl0tn7wUiZYJnNRh6DK4UH/k0lfyrsBKdPVv/AriGIQcEDQZ65LBAGe2Rzui9Ybjz7XUppz1/uKBbyVPGkN3ZAeC6hr0x7Nr38N5+EqkoOm17xpoqR9ohQF55ERSvr4Dkr3chNfC3DMzGJlNBElW8w9nsGQvhNGIzDkXzCg8cLK951xHsFBlTJspJNi3ZFIMF2AeDV3q8DNOB+YHi6QTrChDIWDBRi5U5f+ZMfJLu3ccrqxtdxk4SKH336LFxSmkqefwU5T8fhdSdQf9IVKD6aNiwI/hnmcAZ91isYMJIaCUCx9W098+LgruikeTqzqqxKPUwqJyCPJiyemVVZBOijDGjD38Os0jOiSPL1z3SPjXNANbiNPXAdzTfukjjuknNBbyz3nwgTd3AVFqUJ5hpHlq9MveLnWwttUfoygBmvVjuikxND3znrhsELnZk7k+OjIGxeNEkomyLVta0xxn+HZhjBc4YZ/AFjHjz9u3xRZl2BN4aq9nFwWh16IrQ1aHHEd3j1+4/dB9OtH4e29A2H1DyHQRmOSfQZ1Fy7MHBTGB6J/Djq6p3OxyO2cB+4Car7v/o3GXgfAkj23+x9ID1Teoamo/SXcbvSf2PX7Vc8DdCmE1vN9di+32P9/5YR3vLnhCVGUWBjEkr3yh4H8v9CzmsbdhzOKzsJKM90iFdaTMjRPhGVsakRvOaRidljo6H6G7j+ctrJpsP+4COhDIl0La2+FS4+5mlocBaXY5QnGZysIBYoeSsl5qQzrSj/cgNrfuEzlWBfwA+EjrZyWUvpAAAAABJRU5ErkJggg==">ysyxSoC Chisel 开发环境配置<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h1 id="ysyxsoc-chise-开发环境配置"><a href="#ysyxsoc-chise-开发环境配置" class="header-anchor">#</a> ysyxSoC Chise 开发环境配置</h1> <p>最近一生一芯做到了接 SoC 的部分，发现还是需要重新配置一下 mill 的配置文件才能使用 IDEA 的高亮和代码跳转，因此记录一下配置过程。</p> <div class="custom-block warning"><p class="custom-block-title">注意</p> <p>如果是在 2024 年 4 月 21 号后获取的代码，请直接跳到 <a href="/pages/ysyx/ysyxSoC-Chisel/#新版本-ysyxsoc-代码导入">新版本 ysyxSoC 代码导入</a>章节！</p></div> <h2 id="代码导读"><a href="#代码导读" class="header-anchor">#</a> 代码导读</h2> <p>ysyxSoC 的代码可以通过下面的命令进行获取：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> ysyx-workbench
+<span class="token function">git</span> clone git@github.com:OSCPU/ysyxSoC.git
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>ysyxSoC 的代码结构如下：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>ysyxSoC
+├── Makefile
+├── chiplink <span class="token comment"># chiplink 相关代码</span>
+├── generated <span class="token comment"># 生成的 SoC 代码</span>
+│   ├── ysyxSoCFull-ChipLink.v
+│   └── ysyxSoCFull.v
+├── lint <span class="token comment"># verilator lint 检查</span>
+│   ├── Makefile
+│   ├── README.md
+│   └── verilator-warning.txt
+├── patch <span class="token comment"># Rocket-chip 的补丁</span>
+│   ├── chisel6.diff
+│   └── rocket-chip.patch
+├── perip <span class="token comment"># 外设相关 IP</span>
+├── rocket-chip <span class="token comment"># rocket-chip 代码</span>
+├── soc <span class="token comment"># soc 代码</span>
+└── spec <span class="token comment"># spec 文档（接口规范）</span>
+    └── cpu-interface.md
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>ysyxSoC 的总线部分借助了 <a href="https://github.com/chipsalliance/rocket-chip" target="_blank" rel="noopener noreferrer">rocket-chip<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 的 <a href="https://github.com/chipsalliance/rocket-chip/blob/master/docs/README.md" target="_blank" rel="noopener noreferrer">diplomacy<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 框架来完成连接，因此我们通过阅读 ysyxSoC 的 Makefile 可以得知，ysyxSoC 的代码是在 rocket-chip 中生成，再拷贝到 generated 文件夹中的。</p> <div class="language-Makefile line-numbers-mode"><pre class="language-makefile"><code>FINAL_V <span class="token operator">=</span> rocket-chip/out/emulator/freechips.rocketchip.system.TestHarness/freechips.rocketchip.system.DefaultConfig/mfccompiler/compile.dest/TestHarness.sv
+YSYXSOCFULL_V <span class="token operator">=</span> generated/ysyxSoCFull.v
+ROCKET_CHIP_YSYXSOC_PATH  <span class="token operator">=</span> rocket-chip/src/main/scala/ysyxSoC
+ROCKET_CHIP_CHIPLINK_PATH <span class="token operator">=</span> rocket-chip/src/main/scala/chiplink
+
+<span class="token target symbol"><span class="token variable">$</span>(YSYXSOCFULL_V)</span><span class="token punctuation">:</span>
+	cp <span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">abspath</span> soc<span class="token punctuation">)</span>/* <span class="token variable">$</span><span class="token punctuation">(</span>ROCKET_CHIP_YSYXSOC_PATH<span class="token punctuation">)</span>
+	cp <span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">abspath</span> chiplink<span class="token punctuation">)</span>/* <span class="token variable">$</span><span class="token punctuation">(</span>ROCKET_CHIP_CHIPLINK_PATH<span class="token punctuation">)</span>
+	<span class="token variable">$</span><span class="token punctuation">(</span>MAKE<span class="token punctuation">)</span> -C rocket-chip verilog
+	cp <span class="token variable">$</span><span class="token punctuation">(</span>FINAL_V<span class="token punctuation">)</span> <span class="token variable">$@</span>
+	sed -i -e <span class="token string">'s/_\(aw\|ar\|w\|r\|b\)_\(\|bits_\)/_\1/g'</span> <span class="token variable">$@</span>
+	sed -i <span class="token string">'/firrtl_black_box_resource_files.f/, $$d'</span> <span class="token variable">$@</span>
+
+<span class="token target symbol">verilog</span><span class="token punctuation">:</span> <span class="token variable">$</span><span class="token punctuation">(</span>YSYXSOCFULL_V<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>我使用 JetBrains 家的 IDEA 进行 Chisel 的开发，但是由于我将 ysyxSoC 文件夹直接加到了 npc 目录中，且暂时未对<code>build.sc</code>进行修改，这导致 ysyxSoC 文件夹中所有的 chisel 代码在 IDEA 都无法进行高亮显示和代码跳转。因此接下来我们要对 <code>build.sc</code> 进行适当调整，以提供 IDEA Support 。</p> <h2 id="为-rockee-chip-添加-idea-支持"><a href="#为-rockee-chip-添加-idea-支持" class="header-anchor">#</a> 为 rockee-chip 添加 IDEA 支持</h2> <p>我在 npc 文件夹中直接加入了 ysyxSoC 框架，所以接下来需要改动 npc 中的 <code>build.sc</code>，以将 rocket-chip 加入到我的构建模块中。
+这里我<s>偷了个小懒，</s> 借鉴了香山的 <a href="https://github.com/OpenXiangShan/XiangShan/blob/master/build.sc" target="_blank" rel="noopener noreferrer"><code>build.sc</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，对其进行了适当的删减（去除了很多不需要的模块）。
+修改过的 <code>build.sc</code> 如下：</p> <details class="custom-block details"><summary>点击查看</summary> <div class="language-diff line-numbers-mode"><pre class="language-diff"><code>diff --git a/npc/build.sc b/npc/build.sc
+index a223dac4..af36912f 100644
+<span class="token coord">--- a/npc/build.sc</span>
+<span class="token coord">+++ b/npc/build.sc</span>
+<span class="token coord">@@ -1,43 +1,146 @@</span>
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">// import Mill dependency
+</span><span class="token prefix unchanged"> </span><span class="token line">import mill._
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">import mill.scalalib._
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">import scalalib._
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">import mill.scalalib.scalafmt.ScalafmtModule
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">import mill.scalalib.TestModule.Utest
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">// support BSP
+</span><span class="token prefix unchanged"> </span><span class="token line">import mill.bsp._
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">import $file.`ysyxSoC`.`rocket-chip`.common
+</span><span class="token prefix inserted">+</span><span class="token line">import $file.`ysyxSoC`.`rocket-chip`.cde.common
+</span><span class="token prefix inserted">+</span><span class="token line">import $file.`ysyxSoC`.`rocket-chip`.hardfloat.build
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">object playground extends ScalaModule with ScalafmtModule { m =&gt;
+</span><span class="token prefix deleted">-</span><span class="token line">  val useChisel7 = false
+</span><span class="token prefix deleted">-</span><span class="token line">  val useUTest = false
+</span><span class="token prefix deleted">-</span><span class="token line">  override def scalaVersion = &quot;2.13.12&quot;
+</span><span class="token prefix deleted">-</span><span class="token line">  override def scalacOptions = Seq(
+</span><span class="token prefix deleted">-</span><span class="token line">    &quot;-language:reflectiveCalls&quot;,
+</span><span class="token prefix deleted">-</span><span class="token line">    &quot;-deprecation&quot;,
+</span><span class="token prefix deleted">-</span><span class="token line">    &quot;-feature&quot;,
+</span><span class="token prefix deleted">-</span><span class="token line">    &quot;-Xcheckinit&quot;
+</span><span class="token prefix deleted">-</span><span class="token line">  )
+</span><span class="token prefix deleted">-</span><span class="token line">  override def ivyDeps = Agg(
+</span><span class="token prefix deleted">-</span><span class="token line">    if (useChisel7) ivy&quot;org.chipsalliance::chisel:7.0.0-M1&quot; else
+</span><span class="token prefix deleted">-</span><span class="token line">      ivy&quot;org.chipsalliance::chisel:6.2.0&quot;,
+</span><span class="token prefix deleted">-</span><span class="token line">  )
+</span><span class="token prefix deleted">-</span><span class="token line">  override def scalacPluginIvyDeps = Agg(
+</span><span class="token prefix deleted">-</span><span class="token line">    if (useChisel7) ivy&quot;org.chipsalliance:::chisel-plugin:7.0.0-M1&quot; else
+</span><span class="token prefix deleted">-</span><span class="token line">      ivy&quot;org.chipsalliance:::chisel-plugin:6.2.0&quot;,
+</span><span class="token prefix deleted">-</span><span class="token line">  )
+</span><span class="token prefix deleted">-</span><span class="token line">  object test extends ScalaTests {
+</span><span class="token prefix deleted">-</span><span class="token line">    override def ivyDeps = m.ivyDeps() ++ Agg(
+</span><span class="token prefix deleted">-</span><span class="token line">      ivy&quot;com.lihaoyi::utest:0.8.1&quot;,
+</span><span class="token prefix deleted">-</span><span class="token line">      if (useChisel7) ivy&quot;edu.berkeley.cs::chiseltest:6.0.0&quot; else
+</span><span class="token prefix deleted">-</span><span class="token line">        ivy&quot;edu.berkeley.cs::chiseltest:6.0.0&quot;,
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">val defaultScalaVersion = &quot;2.13.10&quot;
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">def defaultVersions(chiselVersion: String) = chiselVersion match {
+</span><span class="token prefix inserted">+</span><span class="token line">  case &quot;chisel7&quot; =&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">    Map(
+</span><span class="token prefix inserted">+</span><span class="token line">      &quot;chisel&quot;        -&gt; ivy&quot;org.chipsalliance::chisel:7.0.0-M1&quot;,
+</span><span class="token prefix inserted">+</span><span class="token line">      &quot;chisel-plugin&quot; -&gt; ivy&quot;org.chipsalliance:::chisel-plugin:7.0.0-M1&quot;,
+</span><span class="token prefix inserted">+</span><span class="token line">      &quot;chiseltest&quot;    -&gt; ivy&quot;edu.berkeley.cs::chiseltest:6.0.0&quot;
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">    )
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">    def testFramework =
+</span><span class="token prefix deleted">-</span><span class="token line">      if (useUTest) &quot;utest.runner.Framework&quot; else
+</span><span class="token prefix deleted">-</span><span class="token line">        &quot;org.scalatest.tools.Framework&quot;
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">  case &quot;chisel&quot; =&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">    Map(
+</span><span class="token prefix inserted">+</span><span class="token line">      &quot;chisel&quot;        -&gt; ivy&quot;org.chipsalliance::chisel:6.2.0&quot;,
+</span><span class="token prefix inserted">+</span><span class="token line">      &quot;chisel-plugin&quot; -&gt; ivy&quot;org.chipsalliance:::chisel-plugin:6.2.0&quot;,
+</span><span class="token prefix inserted">+</span><span class="token line">      &quot;chiseltest&quot;    -&gt; ivy&quot;edu.berkeley.cs::chiseltest:6.0.0&quot;
+</span><span class="token prefix inserted">+</span><span class="token line">    )
+</span><span class="token prefix inserted">+</span><span class="token line">  case &quot;chisel3&quot; =&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">    Map(
+</span><span class="token prefix inserted">+</span><span class="token line">      &quot;chisel&quot;        -&gt; ivy&quot;edu.berkeley.cs::chisel3:3.6.0&quot;,
+</span><span class="token prefix inserted">+</span><span class="token line">      &quot;chisel-plugin&quot; -&gt; ivy&quot;edu.berkeley.cs:::chisel3-plugin:3.6.0&quot;,
+</span><span class="token prefix inserted">+</span><span class="token line">      &quot;chiseltest&quot;    -&gt; ivy&quot;edu.berkeley.cs::chiseltest:0.6.2&quot;
+</span><span class="token prefix inserted">+</span><span class="token line">    )
+</span><span class="token prefix inserted">+</span><span class="token line">}
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">trait HasChisel extends SbtModule with Cross.Module[String] {
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  def chiselModule: Option[ScalaModule] = None
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  def chiselPluginJar: T[Option[PathRef]] = None
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  def chiselIvy: Option[Dep] = Some(defaultVersions(crossValue)(&quot;chisel&quot;))
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  def chiselPluginIvy: Option[Dep] = Some(defaultVersions(crossValue)(&quot;chisel-plugin&quot;))
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  override def scalaVersion = defaultScalaVersion
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  override def scalacOptions = super.scalacOptions() ++
+</span><span class="token prefix inserted">+</span><span class="token line">    Agg(&quot;-language:reflectiveCalls&quot;, &quot;-Ymacro-annotations&quot;, &quot;-Ytasty-reader&quot;)
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  override def ivyDeps = super.ivyDeps() ++ Agg(chiselIvy.get)
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  override def scalacPluginIvyDeps = super.scalacPluginIvyDeps() ++ Agg(chiselPluginIvy.get)
+</span><span class="token prefix inserted">+</span><span class="token line">}
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">object rocketchip extends Cross[RocketChip](&quot;chisel&quot;, &quot;chisel7&quot;)
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">trait RocketChip extends millbuild.`ysyxSoC`.`rocket-chip`.common.RocketChipModule with HasChisel {
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  override def scalaVersion: T[String] = T(defaultScalaVersion)
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  override def millSourcePath = os.pwd / &quot;ysyxSoC&quot; / &quot;rocket-chip&quot;
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  override def sources = T.sources {
+</span><span class="token prefix inserted">+</span><span class="token line">    super.sources() ++ Seq(PathRef(this.millSourcePath / &quot;ysyxSoC&quot; / &quot;rocket-chip&quot; / &quot;src&quot;))
+</span><span class="token prefix inserted">+</span><span class="token line">  }
+</span><span class="token prefix inserted">+</span><span class="token line">  def macrosModule = macros
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  def hardfloatModule = hardfloat(crossValue)
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  def cdeModule = cde
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  def mainargsIvy = ivy&quot;com.lihaoyi::mainargs:0.5.4&quot;
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  def json4sJacksonIvy = ivy&quot;org.json4s::json4s-jackson:4.0.6&quot;
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  object macros extends Macros
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  trait Macros extends millbuild.`ysyxSoC`.`rocket-chip`.common.MacrosModule with SbtModule {
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">    def scalaVersion: T[String] = T(defaultScalaVersion)
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">    def scalaReflectIvy = ivy&quot;org.scala-lang:scala-reflect:${defaultScalaVersion}&quot;
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">  }
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">  /*
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  object hardfloat extends Cross[Hardfloat](crossValue)
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  trait Hardfloat extends millbuild.`ysyxSoC`.`rocket-chip`.hardfloat.common.HardfloatModule with HasChisel {
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">    override def scalaVersion: T[String] = T(defaultScalaVersion)
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">    override def millSourcePath = os.pwd / &quot;ysyxSoC&quot; / &quot;rocket-chip&quot; / &quot;hardfloat&quot; / &quot;hardfloat&quot;
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  }
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  object cde extends CDE
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  trait CDE extends millbuild.`ysyxSoC`.`rocket-chip`.cde.common.CDEModule with ScalaModule {
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">    def scalaVersion: T[String] = T(defaultScalaVersion)
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">    override def millSourcePath = os.pwd / &quot;ysyxSoC&quot; / &quot;rocket-chip&quot; / &quot;cde&quot; / &quot;cde&quot;
+</span><span class="token prefix inserted">+</span><span class="token line">  }
+</span><span class="token prefix inserted">+</span><span class="token line">}
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">trait NPCModule extends ScalaModule with ScalafmtModule with HasChisel {
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  def rocketModule: ScalaModule
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  override def moduleDeps = super.moduleDeps ++ Seq(
+</span><span class="token prefix inserted">+</span><span class="token line">    rocketModule
+</span><span class="token prefix inserted">+</span><span class="token line">  )
+</span><span class="token prefix inserted">+</span><span class="token line">}
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">object playground extends Cross[Playground](&quot;chisel&quot;, &quot;chisel7&quot;)
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">trait Playground extends NPCModule with HasChisel {
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  override def millSourcePath = os.pwd
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  def rocketModule = rocketchip(crossValue)
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  override def forkArgs = Seq(&quot;-Xmx20G&quot;, &quot;-Xss256m&quot;)
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  override def sources = T.sources {
+</span><span class="token prefix inserted">+</span><span class="token line">    super.sources() ++ Seq(PathRef(this.millSourcePath / &quot;playground&quot; / &quot;src&quot;))
+</span><span class="token prefix inserted">+</span><span class="token line">  }
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">  object test extends SbtModuleTests with TestModule.ScalaTest {
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">    override def forkArgs = Seq(&quot;-Xmx20G&quot;, &quot;-Xss256m&quot;)
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">    override def sources = T.sources {
+</span><span class="token prefix inserted">+</span><span class="token line">      super.sources() ++ Seq(PathRef(this.millSourcePath / &quot;playground&quot; / &quot;test&quot;))
+</span><span class="token prefix inserted">+</span><span class="token line">    }
+</span><span class="token prefix inserted">+</span><span class="token line">
+</span><span class="token prefix inserted">+</span><span class="token line">    override def ivyDeps = super.ivyDeps() ++ Agg(
+</span><span class="token prefix inserted">+</span><span class="token line">      defaultVersions(crossValue)(&quot;chiseltest&quot;)
+</span><span class="token prefix inserted">+</span><span class="token line">    )
+</span><span class="token prefix inserted">+</span><span class="token line">    /*
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">  override def repositoriesTask = T.task { Seq(
+</span><span class="token prefix unchanged"> </span><span class="token line">    coursier.MavenRepository(&quot;https://maven.aliyun.com/repository/central&quot;),
+</span><span class="token prefix unchanged"> </span><span class="token line">    coursier.MavenRepository(&quot;https://repo.scala-sbt.org/scalasbt/maven-releases&quot;),
+</span><span class="token prefix unchanged"> </span><span class="token line">  ) ++ super.repositoriesTask() }
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">   */
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">     */
+</span><span class="token prefix inserted">+</span><span class="token line">  }
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">}
+</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br></div></div></details> <p>需要说明一下的是这里我同样也是选择了进行了 <a href="https://mill-build.com/mill/Cross_Builds.html" target="_blank" rel="noopener noreferrer"><code>Cross Builds</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，主要是出于两个考虑：</p> <ol><li>需要将 rocket-chip 的 <code>build.sc</code> 加进 npc 的 <code>build.sc</code>, 而 rocket-chip 中的 build.sc 是 Cross Builds，因此<s>为了偷懒，不修改 rocket-chip 代码</s>我将 npc 也改为 Cross Builds 了</li> <li>ysyxSoC 环境中默认使用 <code>chisel3.6</code>, 而我在 npc 环境中可能会用到<code>chisel6</code>甚至是<code>chisel7</code>，因此使用 Cross Builds 更方便切换版本</li></ol> <p>经过上述修改后，rocket-chip 已经被我加入到了 npc 的 mill 构建系统中，但是如果直接进行编译：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>mill <span class="token parameter variable">-i</span> __.compile
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>我们会发现 mill 的编译是无法通过的。这是因为目前 rocket-chip 还是使用<code>chisel5</code>, 有许多 API 在<code>chisel6</code>中已经被废弃了，因此我们还是需要对 rocket-chip 中的部分代码进行修改</p> <h2 id="替换-rocket-chip-中在-chisel6-中已弃用的-api"><a href="#替换-rocket-chip-中在-chisel6-中已弃用的-api" class="header-anchor">#</a> 替换 rocket-chip 中在 chisel6 中已弃用的 API</h2> <p>我们进入香山 fork 的 <a href="https://github.com/OpenXiangShan/rocket-chip" target="_blank" rel="noopener noreferrer">rocket-chip 仓库<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，可以看到香山中的 rocket-chip 也已经对这些在 chisel6 中被废弃的 API 进行了 <a href="https://github.com/Emin017/rocket-chip/commit/542030fe5832d740fb28eb21c35eafc965320eb9" target="_blank" rel="noopener noreferrer">替换<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <img src="https://emin-blog.oss-cn-shanghai.aliyuncs.com/img/xiangshan-rocket.png" alt="xiangshan rocket-chip">
+当然，由于猜测香山的 rocket-chip 做了些定制化的修改，具体的代码位置和内容与 ysyxSoC 中的代码相比可能会有区别，我还是选择从 chipsalliance 的 rocket-chip 仓库中 fork 了一个 rocket-chip 进行修改。
+因此只要根据我 <a href="https://github.com/Emin017/rocket-chip" target="_blank" rel="noopener noreferrer">fork 的仓库<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 生成 path 补丁即可：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>git clone https://github.com/Emin017/rocket-chip.git rocket-chip-patch
+cd rocket-chip-patch
+git checkout minsoc
+git diff 542030fe dbcb06af &gt; ../patch/chisel6.patch
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>这里也直接提供了一个可以直接使用的 patch：</p> <details class="custom-block details"><summary>点击查看</summary> <div class="language-diff line-numbers-mode"><pre class="language-diff"><code>diff --git a/src/main/scala/diplomacy/BundleBridge.scala b/src/main/scala/diplomacy/BundleBridge.scala
+index e02d6f4f9..0e2eef8ba 100644
+<span class="token coord">--- a/src/main/scala/diplomacy/BundleBridge.scala</span>
+<span class="token coord">+++ b/src/main/scala/diplomacy/BundleBridge.scala</span>
+<span class="token coord">@@ -3,8 +3,9 @@</span>
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">package freechips.rocketchip.diplomacy
+</span><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">import chisel3._
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">import chisel3.experimental.{DataMirror, SourceInfo}
+</span><span class="token prefix deleted">-</span><span class="token line">import chisel3.experimental.DataMirror.internal.chiselTypeClone
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">import chisel3.experimental.SourceInfo
+</span><span class="token prefix inserted">+</span><span class="token line">import chisel3.reflect.DataMirror
+</span><span class="token prefix inserted">+</span><span class="token line">import chisel3.reflect.DataMirror.internal.chiselTypeClone
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">import org.chipsalliance.cde.config.Parameters
+</span><span class="token prefix unchanged"> </span><span class="token line">import freechips.rocketchip.util.DataToAugmentedData
+</span><span class="token prefix unchanged"> </span><span class="token line">
+</span></span>diff --git a/src/main/scala/diplomacy/LazyModule.scala b/src/main/scala/diplomacy/LazyModule.scala
+index 5f4da46cb..da9bdd4d4 100644
+<span class="token coord">--- a/src/main/scala/diplomacy/LazyModule.scala</span>
+<span class="token coord">+++ b/src/main/scala/diplomacy/LazyModule.scala</span>
+<span class="token coord">@@ -3,9 +3,8 @@</span>
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">package freechips.rocketchip.diplomacy
+</span><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">import chisel3._
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">import chisel3.internal.sourceinfo.{SourceInfo, UnlocatableSourceInfo}
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">import chisel3.{Module, RawModule, Reset, withClockAndReset}
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">import chisel3.experimental.{ChiselAnnotation, CloneModuleAsRecord}
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">import chisel3.experimental.{ChiselAnnotation, CloneModuleAsRecord, SourceInfo, UnlocatableSourceInfo}
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">import firrtl.passes.InlineAnnotation
+</span><span class="token prefix unchanged"> </span><span class="token line">import org.chipsalliance.cde.config.Parameters
+</span><span class="token prefix unchanged"> </span><span class="token line">
+</span></span>diff --git a/src/main/scala/groundtest/TraceGen.scala b/src/main/scala/groundtest/TraceGen.scala
+index 5c5cba9b5..51d284eb5 100644
+<span class="token coord">--- a/src/main/scala/groundtest/TraceGen.scala</span>
+<span class="token coord">+++ b/src/main/scala/groundtest/TraceGen.scala</span>
+@@ -186,7 +186,7 @@ class TagMan(val logNumTags : Int) extends Module {
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">  io.tagOut := nextTag
+</span><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">  // Is the next tag available?
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">  io.available := ~MuxLookup(nextTag, true.B, inUseMap)
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">  io.available := ~MuxLookup(nextTag, true.B)(inUseMap)
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">  // When user takes a tag
+</span><span class="token prefix unchanged"> </span><span class="token line">  when (io.take) {
+</span></span>@@ -249,8 +249,7 @@ class TraceGenerator(val params: TraceGenParams)(implicit val p: Parameters) ext
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">  val addrBagIndices = (0 to addressBagLen-1).
+</span><span class="token prefix unchanged"> </span><span class="token line">                    map(i =&gt; i.U(logAddressBagLen.W))
+</span><span class="token prefix unchanged"> </span><span class="token line">
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">  val randAddrFromBag = MuxLookup(randAddrBagIndex, 0.U,
+</span><span class="token prefix deleted">-</span><span class="token line">                          addrBagIndices.zip(bagOfAddrs))
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">  val randAddrFromBag = MuxLookup(randAddrBagIndex, 0.U)(addrBagIndices.zip(bagOfAddrs))
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">  // Random address from the address bag or the extra addresses.
+</span><span class="token prefix unchanged"> </span><span class="token line">
+</span></span>@@ -268,8 +267,8 @@ class TraceGenerator(val params: TraceGenParams)(implicit val p: Parameters) ext
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">          // A random address from the extra addresses.
+</span><span class="token prefix unchanged"> </span><span class="token line">          val randAddrFromExtra = Cat(0.U,
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">                MuxLookup(randExtraAddrIndex, 0.U,
+</span><span class="token prefix deleted">-</span><span class="token line">                  extraAddrIndices.zip(extraAddrs)), 0.U(3.W))
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">                MuxLookup(randExtraAddrIndex, 0.U)
+</span><span class="token prefix inserted">+</span><span class="token line">                  (extraAddrIndices.zip(extraAddrs)), 0.U(3.W))
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">          Frequency(List(
+</span><span class="token prefix unchanged"> </span><span class="token line">            (1, randAddrFromBag),
+</span></span>@@ -279,8 +278,7 @@ class TraceGenerator(val params: TraceGenParams)(implicit val p: Parameters) ext
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">  val allAddrs = extraAddrs ++ bagOfAddrs
+</span><span class="token prefix unchanged"> </span><span class="token line">  val allAddrIndices = (0 until totalNumAddrs)
+</span><span class="token prefix unchanged"> </span><span class="token line">    .map(i =&gt; i.U(log2Ceil(totalNumAddrs).W))
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">  val initAddr = MuxLookup(initCount, 0.U,
+</span><span class="token prefix deleted">-</span><span class="token line">    allAddrIndices.zip(allAddrs))
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">  val initAddr = MuxLookup(initCount, 0.U)(allAddrIndices.zip(allAddrs))
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">  // Random opcodes
+</span><span class="token prefix unchanged"> </span><span class="token line">  // --------------
+</span></span>diff --git a/src/main/scala/jtag/JtagShifter.scala b/src/main/scala/jtag/JtagShifter.scala
+index 69f6d1272..d76ac3535 100644
+<span class="token coord">--- a/src/main/scala/jtag/JtagShifter.scala</span>
+<span class="token coord">+++ b/src/main/scala/jtag/JtagShifter.scala</span>
+<span class="token coord">@@ -3,7 +3,7 @@</span>
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">package freechips.rocketchip.jtag
+</span><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">import chisel3._
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">import chisel3.experimental.DataMirror
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">import chisel3.reflect.DataMirror
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">import chisel3.internal.firrtl.KnownWidth
+</span><span class="token prefix unchanged"> </span><span class="token line">import chisel3.util.{Cat, Valid}
+</span><span class="token prefix unchanged"> </span><span class="token line">
+</span></span>diff --git a/src/main/scala/rocket/BTB.scala b/src/main/scala/rocket/BTB.scala
+index 25b5b359d..d3f637a41 100644
+<span class="token coord">--- a/src/main/scala/rocket/BTB.scala</span>
+<span class="token coord">+++ b/src/main/scala/rocket/BTB.scala</span>
+@@ -5,7 +5,7 @@ package freechips.rocketchip.rocket
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">import chisel3._
+</span><span class="token prefix unchanged"> </span><span class="token line">import chisel3.util._
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">import chisel3.internal.InstanceId
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">import chisel3.InstanceId
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">import org.chipsalliance.cde.config.Parameters
+</span><span class="token prefix unchanged"> </span><span class="token line">import freechips.rocketchip.subsystem.CacheBlockBytes
+</span><span class="token prefix unchanged"> </span><span class="token line">import freechips.rocketchip.tile.HasCoreParameters
+</span></span>diff --git a/src/main/scala/rocket/DCache.scala b/src/main/scala/rocket/DCache.scala
+index 308392aca..66aa0715f 100644
+<span class="token coord">--- a/src/main/scala/rocket/DCache.scala</span>
+<span class="token coord">+++ b/src/main/scala/rocket/DCache.scala</span>
+@@ -561,7 +561,7 @@ class DCacheModule(outer: DCache) extends HellaCacheModule(outer) {
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">  val put     = edge.Put(a_source, access_address, a_size, a_data)._2
+</span><span class="token prefix unchanged"> </span><span class="token line">  val putpartial = edge.Put(a_source, access_address, a_size, a_data, a_mask)._2
+</span><span class="token prefix unchanged"> </span><span class="token line">  val atomics = if (edge.manager.anySupportLogical) {
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">    MuxLookup(s2_req.cmd, WireDefault(0.U.asTypeOf(new TLBundleA(edge.bundle))), Array(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">    MuxLookup(s2_req.cmd, WireDefault(0.U.asTypeOf(new TLBundleA(edge.bundle))))(Array(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">      M_XA_SWAP -&gt; edge.Logical(a_source, access_address, a_size, a_data, TLAtomics.SWAP)._2,
+</span><span class="token prefix unchanged"> </span><span class="token line">      M_XA_XOR  -&gt; edge.Logical(a_source, access_address, a_size, a_data, TLAtomics.XOR) ._2,
+</span><span class="token prefix unchanged"> </span><span class="token line">      M_XA_OR   -&gt; edge.Logical(a_source, access_address, a_size, a_data, TLAtomics.OR)  ._2,
+</span></span>diff --git a/src/main/scala/rocket/NBDcache.scala b/src/main/scala/rocket/NBDcache.scala
+index f9161dd5d..510fe1f5e 100644
+<span class="token coord">--- a/src/main/scala/rocket/NBDcache.scala</span>
+<span class="token coord">+++ b/src/main/scala/rocket/NBDcache.scala</span>
+@@ -82,7 +82,7 @@ class IOMSHR(id: Int)(implicit edge: TLEdgeOut, p: Parameters) extends L1HellaCa
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">  val get     = edge.Get(a_source, a_address, a_size)._2
+</span><span class="token prefix unchanged"> </span><span class="token line">  val put     = edge.Put(a_source, a_address, a_size, a_data)._2
+</span><span class="token prefix unchanged"> </span><span class="token line">  val atomics = if (edge.manager.anySupportLogical) {
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">    MuxLookup(req.cmd, (0.U).asTypeOf(new TLBundleA(edge.bundle)), Array(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">    MuxLookup(req.cmd, (0.U).asTypeOf(new TLBundleA(edge.bundle)))(Array(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">      M_XA_SWAP -&gt; edge.Logical(a_source, a_address, a_size, a_data, TLAtomics.SWAP)._2,
+</span><span class="token prefix unchanged"> </span><span class="token line">      M_XA_XOR  -&gt; edge.Logical(a_source, a_address, a_size, a_data, TLAtomics.XOR) ._2,
+</span><span class="token prefix unchanged"> </span><span class="token line">      M_XA_OR   -&gt; edge.Logical(a_source, a_address, a_size, a_data, TLAtomics.OR)  ._2,
+</span></span>diff --git a/src/main/scala/rocket/RocketCore.scala b/src/main/scala/rocket/RocketCore.scala
+index 65f8c7323..62c9486da 100644
+<span class="token coord">--- a/src/main/scala/rocket/RocketCore.scala</span>
+<span class="token coord">+++ b/src/main/scala/rocket/RocketCore.scala</span>
+@@ -384,10 +384,10 @@ class Rocket(tile: RocketTile)(implicit p: Parameters) extends CoreModule()(p)
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">  val ex_rs = for (i &lt;- 0 until id_raddr.size)
+</span><span class="token prefix unchanged"> </span><span class="token line">    yield Mux(ex_reg_rs_bypass(i), bypass_mux(ex_reg_rs_lsb(i)), Cat(ex_reg_rs_msb(i), ex_reg_rs_lsb(i)))
+</span><span class="token prefix unchanged"> </span><span class="token line">  val ex_imm = ImmGen(ex_ctrl.sel_imm, ex_reg_inst)
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">  val ex_op1 = MuxLookup(ex_ctrl.sel_alu1, 0.S, Seq(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">  val ex_op1 = MuxLookup(ex_ctrl.sel_alu1, 0.S)(Seq(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">    A1_RS1 -&gt; ex_rs(0).asSInt,
+</span><span class="token prefix unchanged"> </span><span class="token line">    A1_PC -&gt; ex_reg_pc.asSInt))
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">  val ex_op2 = MuxLookup(ex_ctrl.sel_alu2, 0.S, Seq(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">  val ex_op2 = MuxLookup(ex_ctrl.sel_alu2, 0.S)(Seq(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">    A2_RS2 -&gt; ex_rs(1).asSInt,
+</span><span class="token prefix unchanged"> </span><span class="token line">    A2_IMM -&gt; ex_imm,
+</span><span class="token prefix unchanged"> </span><span class="token line">    A2_SIZE -&gt; Mux(ex_reg_rvc, 2.S, 4.S)))
+</span></span>diff --git a/src/main/scala/rocket/ScratchpadSlavePort.scala b/src/main/scala/rocket/ScratchpadSlavePort.scala
+index c5b5632f5..998fe7e26 100644
+<span class="token coord">--- a/src/main/scala/rocket/ScratchpadSlavePort.scala</span>
+<span class="token coord">+++ b/src/main/scala/rocket/ScratchpadSlavePort.scala</span>
+@@ -57,16 +57,16 @@ class ScratchpadSlavePort(address: Seq[AddressSet], coreDataBytes: Int, usingAto
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">    def formCacheReq(a: TLBundleA) = {
+</span><span class="token prefix unchanged"> </span><span class="token line">      val req = Wire(new HellaCacheReq)
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">      req.cmd := MuxLookup(a.opcode, M_XRD, Array(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">      req.cmd := MuxLookup(a.opcode, M_XRD)(Array(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">        TLMessages.PutFullData    -&gt; M_XWR,
+</span><span class="token prefix unchanged"> </span><span class="token line">        TLMessages.PutPartialData -&gt; M_PWR,
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">        TLMessages.ArithmeticData -&gt; MuxLookup(a.param, M_XRD, Array(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">        TLMessages.ArithmeticData -&gt; MuxLookup(a.param, M_XRD)(Array(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">          TLAtomics.MIN           -&gt; M_XA_MIN,
+</span><span class="token prefix unchanged"> </span><span class="token line">          TLAtomics.MAX           -&gt; M_XA_MAX,
+</span><span class="token prefix unchanged"> </span><span class="token line">          TLAtomics.MINU          -&gt; M_XA_MINU,
+</span><span class="token prefix unchanged"> </span><span class="token line">          TLAtomics.MAXU          -&gt; M_XA_MAXU,
+</span><span class="token prefix unchanged"> </span><span class="token line">          TLAtomics.ADD           -&gt; M_XA_ADD)),
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">        TLMessages.LogicalData    -&gt; MuxLookup(a.param, M_XRD, Array(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">        TLMessages.LogicalData    -&gt; MuxLookup(a.param, M_XRD)(Array(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">          TLAtomics.XOR           -&gt; M_XA_XOR,
+</span><span class="token prefix unchanged"> </span><span class="token line">          TLAtomics.OR            -&gt; M_XA_OR,
+</span><span class="token prefix unchanged"> </span><span class="token line">          TLAtomics.AND           -&gt; M_XA_AND,
+</span></span>diff --git a/src/main/scala/tilelink/AtomicAutomata.scala b/src/main/scala/tilelink/AtomicAutomata.scala
+index 3bf633db0..37211ba8f 100644
+<span class="token coord">--- a/src/main/scala/tilelink/AtomicAutomata.scala</span>
+<span class="token coord">+++ b/src/main/scala/tilelink/AtomicAutomata.scala</span>
+@@ -178,7 +178,7 @@ class TLAtomicAutomata(logical: Boolean = true, arithmetic: Boolean = true, conc
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">            when (en) {
+</span><span class="token prefix unchanged"> </span><span class="token line">              r.fifoId := a_fifoId
+</span><span class="token prefix unchanged"> </span><span class="token line">              r.bits   := in.a.bits
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">              r.lut    := MuxLookup(in.a.bits.param(1, 0), 0.U(4.W), Array(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">              r.lut    := MuxLookup(in.a.bits.param(1, 0), 0.U(4.W))(Array(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">                TLAtomics.AND  -&gt; 0x8.U,
+</span><span class="token prefix unchanged"> </span><span class="token line">                TLAtomics.OR   -&gt; 0xe.U,
+</span><span class="token prefix unchanged"> </span><span class="token line">                TLAtomics.XOR  -&gt; 0x6.U,
+</span></span>diff --git a/src/main/scala/tilelink/Edges.scala b/src/main/scala/tilelink/Edges.scala
+index 2c555c03a..2fcb23fc2 100644
+<span class="token coord">--- a/src/main/scala/tilelink/Edges.scala</span>
+<span class="token coord">+++ b/src/main/scala/tilelink/Edges.scala</span>
+@@ -4,7 +4,6 @@ package freechips.rocketchip.tilelink
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">import chisel3._
+</span><span class="token prefix unchanged"> </span><span class="token line">import chisel3.util._
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">import chisel3.internal.sourceinfo.SourceInfo
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">import chisel3.experimental.SourceInfo
+</span><span class="token prefix unchanged"> </span><span class="token line">import org.chipsalliance.cde.config.Parameters
+</span><span class="token prefix unchanged"> </span><span class="token line">import freechips.rocketchip.util._
+</span></span>@@ -274,17 +273,17 @@ class TLEdge(
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">  // Does the request need T permissions to be executed?
+</span><span class="token prefix unchanged"> </span><span class="token line">  def needT(a: TLBundleA): Bool = {
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">    val acq_needT = MuxLookup(a.param, WireDefault(Bool(), DontCare), Array(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">    val acq_needT = MuxLookup(a.param, WireDefault(Bool(), DontCare))(Array(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">      TLPermissions.NtoB -&gt; false.B,
+</span><span class="token prefix unchanged"> </span><span class="token line">      TLPermissions.NtoT -&gt; true.B,
+</span><span class="token prefix unchanged"> </span><span class="token line">      TLPermissions.BtoT -&gt; true.B))
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">    MuxLookup(a.opcode, WireDefault(Bool(), DontCare), Array(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">    MuxLookup(a.opcode, WireDefault(Bool(), DontCare))(Array(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">      TLMessages.PutFullData    -&gt; true.B,
+</span><span class="token prefix unchanged"> </span><span class="token line">      TLMessages.PutPartialData -&gt; true.B,
+</span><span class="token prefix unchanged"> </span><span class="token line">      TLMessages.ArithmeticData -&gt; true.B,
+</span><span class="token prefix unchanged"> </span><span class="token line">      TLMessages.LogicalData    -&gt; true.B,
+</span><span class="token prefix unchanged"> </span><span class="token line">      TLMessages.Get            -&gt; false.B,
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">      TLMessages.Hint           -&gt; MuxLookup(a.param, WireDefault(Bool(), DontCare), Array(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">      TLMessages.Hint           -&gt; MuxLookup(a.param, WireDefault(Bool(), DontCare))(Array(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">        TLHints.PREFETCH_READ   -&gt; false.B,
+</span><span class="token prefix unchanged"> </span><span class="token line">        TLHints.PREFETCH_WRITE  -&gt; true.B)),
+</span><span class="token prefix unchanged"> </span><span class="token line">      TLMessages.AcquireBlock   -&gt; acq_needT,
+</span></span>diff --git a/src/main/scala/tilelink/Fragmenter.scala b/src/main/scala/tilelink/Fragmenter.scala
+index 0aace162b..f522cacbe 100644
+<span class="token coord">--- a/src/main/scala/tilelink/Fragmenter.scala</span>
+<span class="token coord">+++ b/src/main/scala/tilelink/Fragmenter.scala</span>
+@@ -275,7 +275,7 @@ class TLFragmenter(val minSize: Int, val maxSize: Int, val alwaysMin: Boolean =
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">        val maxLgHint        = Mux1H(find, maxLgHints)
+</span><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">        val limit = if (alwaysMin) lgMinSize else
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">          MuxLookup(in_a.bits.opcode, lgMinSize, Array(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">          MuxLookup(in_a.bits.opcode, lgMinSize)(Array(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">            TLMessages.PutFullData    -&gt; maxLgPutFull,
+</span><span class="token prefix unchanged"> </span><span class="token line">            TLMessages.PutPartialData -&gt; maxLgPutPartial,
+</span><span class="token prefix unchanged"> </span><span class="token line">            TLMessages.ArithmeticData -&gt; maxLgArithmetic,
+</span></span>diff --git a/src/main/scala/tilelink/Fuzzer.scala b/src/main/scala/tilelink/Fuzzer.scala
+index 1b3ed7fee..878b4ae74 100644
+<span class="token coord">--- a/src/main/scala/tilelink/Fuzzer.scala</span>
+<span class="token coord">+++ b/src/main/scala/tilelink/Fuzzer.scala</span>
+@@ -180,7 +180,7 @@ class TLFuzzer(
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">    // Pick a specific message to try to send
+</span><span class="token prefix unchanged"> </span><span class="token line">    val a_type_sel  = noiseMaker(3, inc, 0)
+</span><span class="token prefix unchanged"> </span><span class="token line">
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">    val legal = legal_dest &amp;&amp; MuxLookup(a_type_sel, glegal, Seq(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">    val legal = legal_dest &amp;&amp; MuxLookup(a_type_sel, glegal)(Seq(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">      &quot;b000&quot;.U -&gt; glegal,
+</span><span class="token prefix unchanged"> </span><span class="token line">      &quot;b001&quot;.U -&gt; (pflegal &amp;&amp; !noModify.B),
+</span><span class="token prefix unchanged"> </span><span class="token line">      &quot;b010&quot;.U -&gt; (pplegal &amp;&amp; !noModify.B),
+</span></span>@@ -188,7 +188,7 @@ class TLFuzzer(
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">      &quot;b100&quot;.U -&gt; (llegal &amp;&amp; !noModify.B),
+</span><span class="token prefix unchanged"> </span><span class="token line">      &quot;b101&quot;.U -&gt; hlegal))
+</span><span class="token prefix unchanged"> </span><span class="token line">
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">    val bits = MuxLookup(a_type_sel, gbits, Seq(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">    val bits = MuxLookup(a_type_sel, gbits)(Seq(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">      &quot;b000&quot;.U -&gt; gbits,
+</span><span class="token prefix unchanged"> </span><span class="token line">      &quot;b001&quot;.U -&gt; pfbits,
+</span><span class="token prefix unchanged"> </span><span class="token line">      &quot;b010&quot;.U -&gt; ppbits,
+</span></span>diff --git a/src/main/scala/tilelink/Metadata.scala b/src/main/scala/tilelink/Metadata.scala
+index cbd0d8c50..7f4f2854c 100644
+<span class="token coord">--- a/src/main/scala/tilelink/Metadata.scala</span>
+<span class="token coord">+++ b/src/main/scala/tilelink/Metadata.scala</span>
+@@ -81,7 +81,7 @@ class ClientMetadata extends Bundle {
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">    import ClientStates._
+</span><span class="token prefix unchanged"> </span><span class="token line">    val c = categorize(cmd)
+</span><span class="token prefix unchanged"> </span><span class="token line">    //assert(c === rd || param === toT, &quot;Client was expecting trunk permissions.&quot;)
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">    MuxLookup(Cat(c, param), Nothing, Seq(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">    MuxLookup(Cat(c, param), Nothing)(Seq(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">    //(effect param) -&gt; (next)
+</span><span class="token prefix unchanged"> </span><span class="token line">      Cat(rd, toB)   -&gt; Branch,
+</span><span class="token prefix unchanged"> </span><span class="token line">      Cat(rd, toT)   -&gt; Trunk,
+</span></span>@@ -137,7 +137,7 @@ class ClientMetadata extends Bundle {
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">  private def cmdToPermCap(cmd: UInt): UInt = {
+</span><span class="token prefix unchanged"> </span><span class="token line">    import MemoryOpCategories._
+</span><span class="token prefix unchanged"> </span><span class="token line">    import TLPermissions._
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">    MuxLookup(cmd, toN, Seq(
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">    MuxLookup(cmd, toN)(Seq(
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">      M_FLUSH   -&gt; toN,
+</span><span class="token prefix unchanged"> </span><span class="token line">      M_PRODUCE -&gt; toB,
+</span><span class="token prefix unchanged"> </span><span class="token line">      M_CLEAN   -&gt; toT))
+</span></span>diff --git a/src/main/scala/util/RecordMap.scala b/src/main/scala/util/RecordMap.scala
+index 4dd6bc11a..69c0093f7 100644
+<span class="token coord">--- a/src/main/scala/util/RecordMap.scala</span>
+<span class="token coord">+++ b/src/main/scala/util/RecordMap.scala</span>
+@@ -4,8 +4,8 @@ package freechips.rocketchip.util
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">import chisel3._
+</span><span class="token prefix unchanged"> </span><span class="token line">import scala.collection.immutable.ListMap
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">import chisel3.internal.requireIsChiselType
+</span><span class="token prefix deleted">-</span><span class="token line">import chisel3.experimental.DataMirror.internal.chiselTypeClone
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">import chisel3.experimental.requireIsChiselType
+</span><span class="token prefix inserted">+</span><span class="token line">import chisel3.reflect.DataMirror.internal.chiselTypeClone
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">final class RecordMap[T &lt;: Data] (eltMap: ListMap[String, T])
+</span><span class="token prefix unchanged"> </span><span class="token line">    extends Record {
+</span></span>@@ -13,7 +13,7 @@ final class RecordMap[T &lt;: Data] (eltMap: ListMap[String, T])
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">  eltMap.foreach { case (name, elt) =&gt; requireIsChiselType(elt, name) }
+</span><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">  // This is needed for Record
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">  val elements = ListMap[String, T]() ++ eltMap.mapValues(chiselTypeClone(_).asInstanceOf[T])  // mapValues return value is lazy
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">  val elements = ListMap[String, T]() ++ eltMap.view.mapValues(chiselTypeClone(_).asInstanceOf[T])  // mapValues return value is lazy
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">  def apply(x: Int) = elements.values.toSeq(x)
+</span><span class="token prefix unchanged"> </span><span class="token line">  def apply(x: String) = elements.get(x)
+</span></span>diff --git a/src/main/scala/util/TraceCoreInterface.scala b/src/main/scala/util/TraceCoreInterface.scala
+index 6f948e09d..fad9263a4 100644
+<span class="token coord">--- a/src/main/scala/util/TraceCoreInterface.scala</span>
+<span class="token coord">+++ b/src/main/scala/util/TraceCoreInterface.scala</span>
+<span class="token coord">@@ -4,7 +4,6 @@</span>
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">package freechips.rocketchip.util
+</span><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">import chisel3._
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">import chisel3.experimental.ChiselEnum
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">// Definitions for Trace core Interface defined in RISC-V Processor Trace Specification V1.0
+</span><span class="token prefix unchanged"> </span><span class="token line">object TraceItype extends ChiselEnum {
+</span></span></code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br><span class="line-number">279</span><br><span class="line-number">280</span><br><span class="line-number">281</span><br><span class="line-number">282</span><br><span class="line-number">283</span><br><span class="line-number">284</span><br><span class="line-number">285</span><br><span class="line-number">286</span><br><span class="line-number">287</span><br><span class="line-number">288</span><br><span class="line-number">289</span><br><span class="line-number">290</span><br><span class="line-number">291</span><br><span class="line-number">292</span><br><span class="line-number">293</span><br><span class="line-number">294</span><br><span class="line-number">295</span><br><span class="line-number">296</span><br><span class="line-number">297</span><br><span class="line-number">298</span><br><span class="line-number">299</span><br><span class="line-number">300</span><br><span class="line-number">301</span><br><span class="line-number">302</span><br><span class="line-number">303</span><br><span class="line-number">304</span><br><span class="line-number">305</span><br><span class="line-number">306</span><br><span class="line-number">307</span><br></div></div></details> <p>最后只要进行将这个 patch 打上就行了：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> ysyxSoC/rocket-chip
+<span class="token function">git</span> apply <span class="token punctuation">..</span>/patch/chisel6.patch
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="为-soc-相关代码提供高亮和跳转支持"><a href="#为-soc-相关代码提供高亮和跳转支持" class="header-anchor">#</a> 为 SoC 相关代码提供高亮和跳转支持</h2> <p>ysyxSoC 目录中的 soc 文件夹和 chiplink 文件夹中也有 chisel 代码文件，这些代码是需要被拷贝到 rocket-chip 中，参与最终的 verilog 生成。
+我选择将这些代码文件夹软连接到 src 中的 ysyx 文件夹中：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>src
+└── main
+    └── scala
+         ├── amba
+         │   ├── ahb
+         │   ├── apb
+         │   ├── axi4
+         │   ├── axis
+         ├── aop
+         ├── chiplink
+         ├── devices
+         │   ├── debug
+         │   └── tilelink
+         ├── diplomacy
+         ├── examples
+         ├── formal
+         ├── groundtest
+         ├── interrupts
+         ├── jtag
+         ├── prci
+         ├── regmapper
+         ├── rocket
+         ├── subsystem
+         ├── system
+         ├── tile
+         ├── tilelink
+         ├── unittest
+         ├── util
+         ├── ysyx
+         │   ├── chiplink -<span class="token operator">&gt;</span> ysyxSoC/chiplink
+         │   └── soc -<span class="token operator">&gt;</span> ysyxSoC/soc
+         └── ysyxSoC
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><p>OK，现在所有的代码应该都有高亮和跳转支持了，可以直接通过 mill 生成 IDEA 索引：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> ysyxSoC
+mill <span class="token parameter variable">-i</span> mill.idea.GenIdea/idea
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="新版本-ysyxsoc-代码导入"><a href="#新版本-ysyxsoc-代码导入" class="header-anchor">#</a> 新版本 ysyxSoC 代码导入</h2> <p>yzh 老师在 2024 年 4 月 21 日推送了新版本的 ysyxSoC 框架，新版本的 SoC 框架相较与旧版本有了大量的改动，其结构如下：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>ysyxSoC
+├── Makefile
+├── build.sc
+├── lint // lint 语法检查
+│   ├── Makefile
+│   ├── README.md
+│   └── verilator-warning.txt
+├── patch // rocket-chip 补丁
+│   └── rocket-chip.patch
+├── perip //外设 IP
+│   ├── amba
+│   ├── bitrev
+│   ├── flash
+│   ├── gpio
+│   ├── ps2
+│   ├── psram
+│   ├── sdram
+│   ├── spi
+│   ├── uart16550
+│   └── vga
+├── rocket-chip
+├── spec // cpu 端口规范说明
+│   └── cpu-interface.md
+└── src // ysyxSoC 代码
+    ├── CPU.scala
+    ├── SoC.scala
+    ├── Top.scala
+    ├── amba
+    ├── chiplink
+    ├── device
+    └── util
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><p>在新版 ysyxSoC 中，我们可以发现 ysyxSoC 的代码被统一移动到了 src 文件夹下（此前分为 chiplink 和 soc 两个文件夹），因此现在我们无需软链接即可生成所有代码的 IDEA 索引。另外工程中也内置了 build.sc，在其中已经将 rocketchip 加入到 MILL 的构建中，并且还声明了一个名为<code>ysyxsoc</code>的单例对象（ysyxsoc 中定义了 rocketchip 模块），所以我们在 npc 的 build.sc 中定义这个对象就能导入 ysyxSoC 工程。详细修改如下：</p> <details class="custom-block details"><summary>点击查看</summary> <div class="language-scala line-numbers-mode"><pre class="language-scala"><code><span class="token keyword">trait</span> NPCModule <span class="token keyword">extends</span> ScalaModule <span class="token keyword">with</span> ScalafmtModule <span class="token keyword">with</span> HasChisel <span class="token punctuation">{</span>
+
+  <span class="token keyword">def</span> ysyxModule<span class="token operator">:</span> ScalaModule <span class="token comment">// 因为 ysyxSoC 中已经引入了 rocket-chip, 我们只需要定义 ysyxModule 即可</span>
+
+  <span class="token keyword">override</span> <span class="token keyword">def</span> moduleDeps <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span>moduleDeps <span class="token operator">++</span> Seq<span class="token punctuation">(</span>
+    ysyxModule
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">trait</span> Playground <span class="token keyword">extends</span> NPCModule <span class="token keyword">with</span> HasChisel <span class="token punctuation">{</span>
+
+  <span class="token keyword">override</span> <span class="token keyword">def</span> millSourcePath <span class="token operator">=</span> os<span class="token punctuation">.</span>pwd
+
+  <span class="token keyword">def</span> ysyxModule <span class="token operator">=</span> ysyxsoc <span class="token comment">// 在此处定义 ysyxModule</span>
+
+  <span class="token keyword">override</span> <span class="token keyword">def</span> forkArgs <span class="token operator">=</span> Seq<span class="token punctuation">(</span><span class="token string">&quot;-Xmx20G&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;-Xss256m&quot;</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">override</span> <span class="token keyword">def</span> sources <span class="token operator">=</span> T<span class="token punctuation">.</span>sources <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span>sources<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">++</span> Seq<span class="token punctuation">(</span>PathRef<span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>millSourcePath <span class="token operator">/</span> <span class="token string">&quot;playground&quot;</span> <span class="token operator">/</span> <span class="token string">&quot;src&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">object</span> test <span class="token keyword">extends</span> SbtModuleTests <span class="token keyword">with</span> TestModule<span class="token punctuation">.</span>ScalaTest <span class="token punctuation">{</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">def</span> forkArgs <span class="token operator">=</span> Seq<span class="token punctuation">(</span><span class="token string">&quot;-Xmx20G&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;-Xss256m&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">def</span> sources <span class="token operator">=</span> T<span class="token punctuation">.</span>sources <span class="token punctuation">{</span>
+      <span class="token keyword">super</span><span class="token punctuation">.</span>sources<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">++</span> Seq<span class="token punctuation">(</span>PathRef<span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>millSourcePath <span class="token operator">/</span> <span class="token string">&quot;playground&quot;</span> <span class="token operator">/</span> <span class="token string">&quot;test&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">def</span> ivyDeps <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span>ivyDeps<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">++</span> Agg<span class="token punctuation">(</span>
+      <span class="token string-interpolation"><span class="token id function">ivy</span><span class="token string">&quot;edu.berkeley.cs::chiseltest:6.0.0&quot;</span></span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div></details> <p>另外还需要注意的是 ysyxSoC 中虽然引入了 rocket-chip, 但是并没有采用 Cross Build, 因此如果要采用和上文一样的 Cross Build 方式，则还需要进行更多的修改。</p> <p>到这里我们就能使用代码高亮和自动跳转啦！Enjoy it ！ 😃</p></div></div> <!----> <div class="page-edit"><!----> <!----> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/notes/IC/chisel/start/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">Chisel 环境搭建</div></a> <a href="/notes/AI/yolov5/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">AWS服务器训练深度学习模型(Yolov5)</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/notes/IC/chisel/start/" class="prev">Chisel 环境搭建</a></span> <span class="next"><a href="/notes/AI/yolov5/">AWS服务器训练深度学习模型(Yolov5)</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/slides/intro/"><div>
+            Slides 目录
+            <!----></div></a> <span class="date">03-21</span></dt></dl><dl><dd>02</dd> <dt><a href="/notes/IC/chisel/start/"><div>
+            Chisel 环境搭建
+            <!----></div></a> <span class="date">03-18</span></dt></dl><dl><dd>03</dd> <dt><a href="/notes/IC/gem5/config/"><div>
+            配置 GEM5
+            <!----></div></a> <span class="date">03-18</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><!----> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> <!----></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.1873182b.js" defer></script><script src="/assets/js/3.be01622c.js" defer></script><script src="/assets/js/2.4fd48b6f.js" defer></script><script src="/assets/js/44.711d4403.js" defer></script>
+  </body>
+</html>
