@@ -1,12 +1,17 @@
 ---
 title: ysyxSoC Chisel 开发环境配置
-date: 2024-04-12 15:15:32
+permalink: /IC/ysyx/chisel/ysyxSoC/
 categories:
   - 学习笔记
-  - 体系结构&数字 IC
   - 一生一芯
+  - chisel
+  - 体系结构&数字 IC
 tags:
-  - 
+  - 一生一芯
+  - 体系结构&数字 IC
+  - chisel
+abbrlink: 24992
+date: 2024-04-12 15:15:32
 ---
 
 最近一生一芯做到了接 SoC 的部分，发现还是需要重新配置一下 mill 的配置文件才能使用 IDEA 的高亮和代码跳转，因此记录一下配置过程。

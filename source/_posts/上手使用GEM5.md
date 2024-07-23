@@ -1,12 +1,15 @@
 ---
 title: 上手使用 GEM5
-date: 2024-03-18 09:07:21
+permalink: /IC/gem5/start/
 categories:
   - 学习笔记
   - 体系结构&数字 IC
   - GEM5 使用
 tags:
-  - 
+  - 体系结构&数字 IC
+  - GEM5
+abbrlink: 61123
+date: 2024-03-18 09:07:21
 ---
 
 GEM5 是一个开源计算机架构模拟器，包括系统级架构以及处理器微架构。GEM5 的前身为密歇根大学的 m5 项目与威斯康星大学的 GEMS 项目。2011 年 m5 与 GEMS 合并为 Gem5，目前被广泛用于学术界和工业界。通过谷歌学术可以看到，Gem5 目前被引用超过 5000 次，大量论文采用 Gem5 作为研究工具。同时也被许多工业界公司使用，包括 ARM、AMD、Google、Micron、Metempsy、HP、Samsung 等。

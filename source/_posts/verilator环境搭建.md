@@ -1,11 +1,13 @@
 ---
 title: 搭建 Verilator 仿真环境
-date: 2024-03-16 17:31:10
+permalink: /IC/verilator/start/
 categories:
   - 学习笔记
-  - ysyx
+  - 一生一芯
 tags:
-  - 
+  - 一生一芯
+abbrlink: 23426
+date: 2024-03-16 17:31:10
 ---
 
 搭建Verilator的环境跟着官方的文档来就行

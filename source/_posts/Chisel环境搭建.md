@@ -1,11 +1,15 @@
 ---
-title: Chisel 环境搭建
-date: 2024-03-18 10:19:28
+title: Chisel环境搭建
+permalink: /IC/ysyx/chisel/
 categories:
   - 体系结构&数字 IC
-  - Chisel
+  - 一生一芯
+  - chisel
 tags:
-  - 
+  - 一生一芯
+  - chisel
+abbrlink: 56039
+date: 2024-03-18 10:19:28
 ---
 # Chisel 环境搭建
 
