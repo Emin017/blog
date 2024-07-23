@@ -1,0 +1,15 @@
+---
+title: 配置 GEM5
+date: 2024-03-18 09:58:51
+permalink: /notes/IC/gem5/config/
+categories:
+  - 学习笔记
+  - 体系结构&数字 IC
+  - GEM5 使用
+tags:
+  - 
+---
+
+# 配置 GEM5
+
+TODO
