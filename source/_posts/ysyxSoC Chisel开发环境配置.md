@@ -8,7 +8,6 @@ categories:
   - 体系结构&数字 IC
 tags:
   - 一生一芯
-  - 体系结构&数字 IC
   - chisel
 abbrlink: 24992
 date: 2024-04-12 15:15:32
@@ -20,7 +19,7 @@ date: 2024-04-12 15:15:32
 # ysyxSoC Chisel 开发环境配置
 
 {% note info %}
-如果是在 2024 年 4 月 21 号后获取的代码，请直接跳到 [新版本 ysyxSoC 代码导入](/pages/ysyx/ysyxSoC-Chisel/#新版本-ysyxsoc-代码导入)章节！
+如果是在 2024 年 4 月 21 号后获取的代码，请直接跳到 [新版本 ysyxSoC 代码导入](https://eminblog.cc/IC/ysyx/chisel/ysyxSoC/#新版本-ysyxSoC-代码导入)章节！
 {% endnote %}
 
 ## 代码导读
@@ -275,7 +274,7 @@ mill -i __.compile
 我们进入香山 fork 的 [rocket-chip 仓库](https://github.com/OpenXiangShan/rocket-chip)，可以看到香山中的 rocket-chip 也已经对这些在 chisel6 中被废弃的 API 进行了 [替换](https://github.com/Emin017/rocket-chip/commit/542030fe5832d740fb28eb21c35eafc965320eb9)
 ![xiangshan rocket-chip](https://emin-blog.oss-cn-shanghai.aliyuncs.com/img/xiangshan-rocket.png)
 当然，由于猜测香山的 rocket-chip 做了些定制化的修改，具体的代码位置和内容与 ysyxSoC 中的代码相比可能会有区别，我还是选择从 chipsalliance 的 rocket-chip 仓库中 fork 了一个 rocket-chip 进行修改。
-因此只要根据我 [fork 的仓库](https://github.com/Emin017/rocket-chip) 生成 path 补丁即可：
+因此只要根据我 [ fork 的仓库](https://github.com/Emin017/rocket-chip) 生成 path 补丁即可：
 ```
 git clone https://github.com/Emin017/rocket-chip.git rocket-chip-patch
 cd rocket-chip-patch

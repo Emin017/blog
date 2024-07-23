@@ -5,7 +5,6 @@ categories:
   - 体系结构&数字 IC
   - 一生一芯
 tags:
-  - 体系结构&数字 IC
   - 一生一芯
 abbrlink: 24410
 date: 2024-07-12 15:15:32
