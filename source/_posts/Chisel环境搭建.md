@@ -162,7 +162,11 @@ mill mill.idea.GenIdea/idea
 JetBrains 公司推出 Java 开发工具 [IDEA](https://www.jetbrains.com/idea/) 有较为智能的补全提示和无缝的开箱即用体验，因此我个人更推荐使用 IDEA 进行 Chisel 开发
 {% endnote %}
 ## 可能会遇到的坑
-### Verilator 需要 C++14 特性
+### ~~Verilator 需要 C++14 特性~~
+{% note warning %}
+chisel-template 工程中的 chisel 版本已经更新为 6.2.0，本章所提及的问题已经在[#3876](https://github.com/chipsalliance/chisel/blob/main/svsim/src/main/resources/simulation-driver.cpp)中修复。
+如果在使用时遇到该问题，请升级 chisel 版本至 6.2.0 以上！
+{% endnote %}
 如果你安装的 Verilator 是 `5.020` 以上的版本，同时使用了 `Chisel6.2.0` 以下的版本，在运行`mill -i __.test`时可能会遇到如下报错：
 {% fold 点击展开 %}
 ```shell
