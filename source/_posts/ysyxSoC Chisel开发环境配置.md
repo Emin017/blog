@@ -73,7 +73,7 @@ verilog: $(YSYXSOCFULL_V)
 这里我~~偷了个小懒，~~ 借鉴了香山的 [`build.sc`](https://github.com/OpenXiangShan/XiangShan/blob/master/build.sc)，对其进行了适当的删减（去除了很多不需要的模块）。
 修改过的 `build.sc` 如下：
 
-{% fold build.sc %}
+{% fold 点击展开 %}
 
 ```diff
 diff --git a/npc/build.sc b/npc/build.sc
@@ -283,7 +283,7 @@ git diff 542030fe dbcb06af > ../patch/chisel6.patch
 ```
 
 这里也直接提供了一个可以直接使用的 patch：
-{% fold patch %}
+{% fold 点击展开 %}
 ```diff
 diff --git a/src/main/scala/diplomacy/BundleBridge.scala b/src/main/scala/diplomacy/BundleBridge.scala
 index e02d6f4f9..0e2eef8ba 100644
@@ -679,7 +679,7 @@ ysyxSoC
     └── util
 ```
 在新版 ysyxSoC 中，我们可以发现 ysyxSoC 的代码被统一移动到了 src 文件夹下（此前分为 chiplink 和 soc 两个文件夹），因此现在我们无需软链接即可生成所有代码的 IDEA 索引。另外工程中也内置了 build.sc，在其中已经将 rocketchip 加入到 MILL 的构建中，并且还声明了一个名为`ysyxsoc`的单例对象（ysyxsoc 中定义了 rocketchip 模块），所以我们在 npc 的 build.sc 中定义这个对象就能导入 ysyxSoC 工程。详细修改如下：
-{% fold build.sc %}
+{% fold 点击展开 %}
 ```scala
 trait NPCModule extends ScalaModule with ScalafmtModule with HasChisel {
 
