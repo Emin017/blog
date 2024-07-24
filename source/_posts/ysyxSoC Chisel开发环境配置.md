@@ -18,7 +18,7 @@ date: 2024-04-12 15:15:32
 
 # ysyxSoC Chisel 开发环境配置
 
-{% note info %}
+{% note warning %}
 如果是在 2024 年 4 月 21 号后获取的代码，请直接跳到 [新版本 ysyxSoC 代码导入](https://eminblog.cc/IC/ysyx/chisel/ysyxSoC/#新版本-ysyxSoC-代码导入)章节！
 {% endnote %}
 

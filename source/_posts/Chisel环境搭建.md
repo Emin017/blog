@@ -29,13 +29,13 @@ Chisel 将硬件构造原语添加到 Scala 编程语言中，为设计人员提
 ![创建 Chisel 工程模板](https://emin-blog.oss-cn-shanghai.aliyuncs.com/img/create-template.png)
 完成创建后将仓库下载到本地就能开始开发了。
 ![下载模板工程](https://emin-blog.oss-cn-shanghai.aliyuncs.com/img/clone-template.png)
-::: tip
+{% note info %}
 如果你不想在自己的 Github 上创建模板工程，也可以直接下载 chipsalliance 提供的模板（在 shell 中执行如下命令）。
 
 ```shell
 git clone https://github.com/chipsalliance/chisel-template.git
 ```
-:::
+{% endnote %}
 
 ## 安装依赖软件包
 Chisel 主要依赖 JDK、SBT/MILL 和 Verilator ( 模板中的测试使用 svsim，需要 Verilator 作为测试后端 )。
@@ -65,9 +65,9 @@ Scala 构建工具主要有 SBT 和 MILL 两种，我选择的构建工具是 MI
 curl -L https://github.com/com-lihaoyi/mill/releases/download/0.11.5/0.11.5 > mill && chmod +x mill
 ```
 这时候你会发现在当前文件夹下面多出了一个 MILL，这时我们可以选择将其移动到系统路径 ( PATH ) 中，也可以选择在当前文件夹下面使用 （执行`./mill`) 。
-::: tip
+{% note info %}
 关于 MILL 工具的教程，可以看这个 [博客](https://alvinalexander.com/scala/mill-build-tool/intro/)
-:::
+{% endnote %}
 
 ## 开始构建
 接下来我们可以开始测试 Chisel 代码能否正常构建了，我们来到刚刚下载好的模板工程文件夹下面执行：
@@ -93,7 +93,7 @@ GCDSpec:
 - Gcd should calculate proper greatest common denominator
 ```
 这说明我们已经成功构建 Chisel 。
-::: warning
+{% note danger %}
 如果没有修改 %NAME% 直接执行`mill %NAME%.test`则会得到类似于下面的输出：
 ```shell
 1 targets failed
@@ -102,7 +102,7 @@ object %NAME% extends SbtModule { m =>
         ^
 ```
 这时我们需要到 `build.sc` 中将`%NAME`替换为我们工程的名字。我这将`%NAME%`修改为了`playground`，所以 `build.sc` 应该是：
-::: details
+{% fold 点击展开 %}
 ```scala
 object playground extends SbtModule { m =>
   override def millSourcePath = os.pwd
@@ -126,13 +126,14 @@ object playground extends SbtModule { m =>
   }
 }
 ```
-:::
+{% endfold %}
+{% endnote %}
 
 如果需要生成 Verilog 文件，则执行下面这行命令
 ```shell
 $ mill -i playground.runMain gcd.GCD
 ```
-::: tip
+{% note info %}
 这里的`playground`是我们刚刚修改的`%NAME%`，`gcd`是`GCD.scala`文件所在的软件包（在 src/main/scala/gcd 目录下），在`GCD.scala`中定义了如下的伴生对象：
 ```scala
 object GCD extends App {
@@ -145,7 +146,7 @@ object GCD extends App {
 其中`ChiselStage.emitSystemVerilogFile`就是生成 System Verilog 文件的 Api，我们执行这个伴生对象就可以生成 Verilog 了。
 模板工程中其实还提供了`DecoupledGCD`，如果想要生成它的 System Verilog 文件，则只需将`new GCD`替换为`new DecoupledGCD`就可以生成对应的文件 (`DecoupledGCD`需要提供宽度参数，因此需要改成类似于`new Decoupled(2)`)。
 你也可以将生成 Verilog 文件的对象改为其他名称，只需要修改对应的生成命令，保持上文提到的规则就可以了 ( `mill -i %NAME%.runMain 软件包。对象名` )。
-:::
+{% endnote %}
 
 ## 使用 MILL 生成 IDE Support
 MILL 的 [文档](https://mill-build.com/mill/Installation_IDE_Support.html) 中有对如何生成 IDE 支持进行说明。
@@ -157,13 +158,13 @@ mill mill.bsp.BSP/install
 ```shell
 mill mill.idea.GenIdea/idea
 ```
-::: tip
+{% note success %}
 JetBrains 公司推出 Java 开发工具 [IDEA](https://www.jetbrains.com/idea/) 有较为智能的补全提示和无缝的开箱即用体验，因此我个人更推荐使用 IDEA 进行 Chisel 开发
-:::
+{% endnote %}
 ## 可能会遇到的坑
 ### Verilator 需要 C++14 特性
 如果你安装的 Verilator 是 `5.020` 以上的版本，同时使用了 `Chisel6.2.0` 以下的版本，在运行`mill -i __.test`时可能会遇到如下报错：
-::: details
+{% fold 点击展开 %}
 ```shell
 [info] done compiling
 [83/83] playground.test.test
@@ -277,7 +278,7 @@ make: Leaving directory '/tmp/chisel3.simulator.EphemeralSimulator/721927@archli
 playground.test.test 1 tests failed: 
   gcd.GCDSpec Gcd should calculate proper greatest common denominator
 ```
-:::
+{% endfold %}
 这是因为 Verilator 从`5.020`版本起需要 `C++14` 标准，而 `Chisel6.2.0` 版本之前的代码中限制了 C++标准为 [C++11](https://github.com/chipsalliance/chisel/pull/3876)。
 解决方法：
 1. 使用 `Chisel6.2.0` 。
@@ -287,6 +288,6 @@ playground.test.test 1 tests failed:
 从 Chisel3.6 版本开始，Chisel 开始使用 firtool (LLVM [CIRCT](https://github.com/llvm/circt) 项目的一部分）来生成 Verilog，好消息是现在 Chisel 开始使用 [firtool-resolver](https://github.com/chipsalliance/firtool-resolver) 来自动下载 firtool 依赖。
 如果你在系统中已经安装了 firtool, 但是 firtool 版本和 Chisel 不适配，那么在生成 Verilog 的时候会报错。
 要解决这个问题问题，需要 [下载](https://github.com/llvm/circt/releases) 对应版本的 firtool ，并将它加入到`PATH`中。
-::: warning
+{%note warning%}
 根据这里的版本对应 [说明](https://www.chisel-lang.org/docs/appendix/versioning)，下载对应的 firtool ！
-:::
+{%endnote%}

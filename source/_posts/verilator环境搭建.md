@@ -149,9 +149,9 @@ int main (int argc, char** argv, char** env){
 }
 ```
 
-::: tip
+{% note warning %}
 官方给的实例是生成VCD格式的波形文件，其本质是文本文件，所以占用的空间会比较大，另外也可以生成fst格式的波形文件，具体操作可以参考verilator的[文档](https://verilator.org/guide/latest/faq.html?highlight=fst)。
-:::
+{% endnote %}
 
 
 ## 一键仿真

@@ -27,9 +27,9 @@ git clone https://github.com/gem5/gem5
 
 推荐在 ubuntu 环境下进行构建（或者在 docker 中进行）
 
-::: tip
+{% note warning %}
 我也尝试过在 arch 或是 fedora 这些滚动发行版上进行构建，但是似乎是因为 python 版本过高会导致 scons 构建工具出现问题。如果你在使用这些滚动发行版，建议在 docker 下进行构建
-:::
+{% endnote %}
 ```
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python3-dev python3 
 suod apt install libboost-all-dev pkg-config libhdf5-dev libpng-dev mold pip libcapstone-dev #可选
