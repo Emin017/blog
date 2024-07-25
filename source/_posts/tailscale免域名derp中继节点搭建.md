@@ -39,7 +39,7 @@ go install tailscale.com/cmd/derper@main
 ```
 
 ### 修改证书并编译 DERP
-证书一般位于 /root/go/pkg/mod/tailscale.com@v （具体版本视实际情况） 的 cmd/derper 目录下：
+证书一般位于 `/root/go/pkg/mod/tailscale.com@v1.61.0.xxxxxxxxx` (具体版本视实际情况) 的 cmd/derper 目录下：
 ```shell
 ls /root/go/pkg/mod/tailscale.com@v1.61.0-pre.0.20240310014715-ad33e4727050/cmd/derper/
 bootstrap_dns.go  bootstrap_dns_test.go  cert.go  depaware.txt  derper.go  derper_test.go  mesh.go  websocket.go
@@ -59,7 +59,6 @@ func (m *manualCertManager) getCertificate(hi *tls.ClientHelloInfo) (*tls.Certif
         certCopy.Certificate = certCopy.Certificate[:len(certCopy.Certificate):len(certCopy.Certificate)]
         return certCopy, nil
 }
-
 ```
 然后编译 derper:
 ```shell
@@ -78,7 +77,7 @@ derper
 openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -nodes -keyout /etc/derp/derp.myself.com.key -out /etc/derp/derp.myself.com.crt -subj "/CN=derp.myself.com" -addext "subjectAltName=DNS:derp.myself.com"
 ```
 
-### 配置 derp 服务
+### 配置 DERP 服务
 修改对应的端口，将下面这段代码写入 `/etc/systemd/system/derp.service` 中：
 ```
 # 下面示例的端口为 33445 和 33446
