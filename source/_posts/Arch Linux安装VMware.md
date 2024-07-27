@@ -6,6 +6,7 @@ categories:
 tags:
   - Tools
 abbrlink: 64135
+date: 2024-07-27 19:54:41
 ---
 
 记录一下 Arch Linux 安装 VMware 过程以及需要打的一些补丁包
