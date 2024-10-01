@@ -233,7 +233,7 @@ aside:
       link: https://github.com/Emin017
   card_announcement:
     enable: true
-    content: Welcome to my blog! If you have any questions, please contact me
+    content: 如有任何问题，欢迎在 Github 上提 issue，或者通过邮件联系我～
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
