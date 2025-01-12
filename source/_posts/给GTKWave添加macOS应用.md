@@ -8,6 +8,7 @@ tags:
   - nixos
 abbrlink: 873
 date: 2025-01-12 10:36:09
+cover: https://emin-blog.oss-cn-shanghai.aliyuncs.com/img/gtkwave-macos-app/preview1.png
 ---
 
 # 给 GTKWave 添加 macOS 应用包
@@ -136,8 +137,7 @@ GTKWave App Bundle 的程序功能基本上就解决了，但是我们还缺一�
 OK，图标添加也完成了。
 
 ### 提 Pull Request 尝试合并到上游
-然后我就提了一个 pull request: [#401](https://github.com/gtkwave/gtkwave/pull/401)
-很快我就得到了 maintainer 的反馈：
+然后我就提了一个 pull request: [#401](https://github.com/gtkwave/gtkwave/pull/401)，很快我就得到了 Maintainer 的反馈：
 
 ![pr-review](https://emin-blog.oss-cn-shanghai.aliyuncs.com/img/gtkwave-macos-app/gtkwave-maintainer.png)
 
