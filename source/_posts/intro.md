@@ -1,11 +1,12 @@
 ---
 title: About Me
-date: 2024-03-16 16:15:32
 permalink: /about/
 categories:
   - intro
 tags:
-  - 
+  - null
+abbrlink: 61421
+date: 2024-03-16 16:15:32
 ---
 # About me
 
@@ -14,7 +15,7 @@ Hi there 👋
 
 - 🧑 **Name**: Emin (Chu Qiming)
 
-- 👓 **CV**: [CV](https://rxresu.me/emin017/ic)
+- 👓 **CV**: [CV](https://rxresu.me/emin017/emin017)
 
 - 📫 **Mail**: cchuqiming@gmail.com
 
